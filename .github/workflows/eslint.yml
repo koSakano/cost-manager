@@ -8,11 +8,15 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+          cache: 'pnmp'
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
       - name: Run ESLint
-        run: npm run lint
+        run: pnpm run lint
