@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnmp'
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
       - name: Run ESLint
